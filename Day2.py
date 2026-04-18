@@ -4,7 +4,7 @@ def Start_task_manager():
     task_list=[]
 
     while True:
-        name =input('Enter the task Name || EXIT to stop')
+        name =input('Enter the task Name || EXIT to stop ')
 
         if name.upper() =='EXIT':
             print('Task have stopped')
@@ -16,5 +16,9 @@ def Start_task_manager():
         status=status_mapping.get(status_choice,'Unknown')
         task_enter={'name':name,'status':status}
         task_list.append(task_enter)
-        print(f"currentList:{task_list}")
+        if task_list:
+            for task in task_list:
+                print(task)
+
+        
 Start_task_manager()
