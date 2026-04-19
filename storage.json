@@ -1,2 +1,22 @@
-{'name': 'gta 5', 'amount': 120, 'category': 'Games'}{'name': 'GOOD FOOD', 'amount': 20, 'category': 'Food'}
-{'name': 'HOUSE', 'amount': 400, 'category': 'Rent'}
+[
+    {
+        "name": "pubg",
+        "amount": 300,
+        "category": "Games"
+    },
+    {
+        "name": "house",
+        "amount": 300,
+        "category": "Rent"
+    },
+    {
+        "name": "ghgh",
+        "amount": 200,
+        "category": "Rent"
+    },
+    {
+        "name": "vrkh",
+        "amount": 30,
+        "category": "Travel"
+    }
+]

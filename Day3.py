@@ -76,16 +76,25 @@
 
 #Expense Calculatore --AI Answer--
 
+import json
+
+
 MonthlyExpense=int(input('Enter the montly amount need for expense '))
 Expense=[]
+with open("storage.json","r") as save:
+        try:
+         Expense=json.load(save)
+        except:
+            Expense=[]
 def MonthlyExpenseCalculator():
     while True :
-     with open("storage.json","r") as save:
-        store=save.readlines()
-        Expense=store
-        print(Expense)
+    
      selectMode=input('Select what you want 1.Creat | 2.Summary | 3.View | 4.Exit ' )
      if selectMode=='4':
+        #Storing to the external json formate 
+        with open("storage.json","w")as save:
+             json.dump(Expense,save,indent=4)
+             
         print('Good Bye')
         break
      elif selectMode=='1':
@@ -95,11 +104,8 @@ def MonthlyExpenseCalculator():
             find=catemap.get(cate,'Others')
             name=input('What do you buy ')
             amount=int(input('How much it coast '))
-            obj={'name':name,'amount':amount,'category':find}
-            #Storing to the external json formate 
-            with open("storage.json","a")as save:
-             convert=str(obj)
-             save.write(convert)
+            obj={"name":name,"amount":amount,"category":find}
+            
             
             Expense.append(obj)
         except Exception as e:
